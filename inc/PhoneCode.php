@@ -5,7 +5,7 @@ class PhoneCode {
 
 	public function __construct( $phone = '' ) {
 		if ( ! empty( $phone ) ) {
-			$phone = preg_replace( '/[^0-9.]/', '', $phone ); // оставляем только цифры
+			$phone = preg_replace( '/[^0-9]/', '', $phone ); // оставляем только цифры
 			$zero  = $phone[0] . $phone[1]; // если первые 00
 			if ( $zero == '00' ) {
 				$phone = mb_substr( $phone, 2 );
